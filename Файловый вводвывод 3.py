@@ -25,6 +25,7 @@ MathScore = []
 PhysicsScore = []
 RussianScore = []
 stringtotal  = ''
+#Путь к загрузке файла 'G:\Python\ФАйлы\dataset_3363_4.txt' / File upload path
 with open('G:\Python\ФАйлы\dataset_3363_4.txt') as in_f_obj:
     for list_string in in_f_obj:
         SdudentScoire = list_string.strip().split(";")
@@ -35,13 +36,11 @@ with open('G:\Python\ФАйлы\dataset_3363_4.txt') as in_f_obj:
         RussianScore.append(int(SdudentScoire[3]))
 
 MedMathSovre = sum(MathScore) / len(MathScore)
-#stringtotal = stringtotal + str(MedMathSovre) + '\n'
 MedPhysicsScore = sum(PhysicsScore) / len(PhysicsScore)
-#stringtotal = stringtotal + str(MedPhysicsScore) + '\n'
 MedPRussianScore = sum(RussianScore) / len(RussianScore)
 stringtotal = stringtotal + str(MedMathSovre) + " " + str(MedPhysicsScore) + " " + str(MedPRussianScore) 
 
 
-	
+#Сохраняем файл по указанному пути / Save the file to the specified path 	
 with open('G:\Python\ФАйлы\dataset_3363_4_2.txt', 'w', encoding='utf-8') as out_f_obj:
 	out_f_obj.write(stringtotal)
